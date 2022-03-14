@@ -54,6 +54,7 @@ class DetailActivity : AppCompatActivity() {
                 .load(Credentials.Companion.POSTER_BASE_URL + detailMovie.moviePoster)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(binding.detailPoster)
+            binding.detailTitle.text = detailMovie.movieTitle
             binding.detailOverview.text = detailMovie.movieOverview
             binding.detailItemReleaseDate.text = detailMovie.movieReleaseDate
             binding.detailItemRating.text = detailMovie.movieVote.toString()
@@ -81,6 +82,7 @@ class DetailActivity : AppCompatActivity() {
                 .load(Credentials.POSTER_BASE_URL + detailTvShow.tvShowPoster)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(binding.detailPoster)
+            binding.detailTitle.text = detailTvShow.tvShowTitle
             binding.detailOverview.text = detailTvShow.tvShowOverview
             binding.detailItemReleaseDate.text = detailTvShow.tvShowReleaseDate
             binding.detailItemRating.text = detailTvShow.tvShowVote.toString()
