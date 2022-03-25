@@ -6,6 +6,7 @@ dependencies{
     testImplementation "junit:junit:4.13.2"
     androidTestImplementation "androidx.test.ext:junit:$androidx_junit_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:3.4.0"
+    implementation "androidx.multidex:multidex:$multidex_version"
 
     // card view, recycler view, glide dependencies
     implementation "androidx.cardview:cardview:$cardview_version"

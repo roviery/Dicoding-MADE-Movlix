@@ -19,6 +19,8 @@ buildscript{
     ext.recyclerview_version = "1.2.1"
     ext.retrofit_version = "2.9.0"
     ext.room_version = "2.4.2"
+    ext.sqllite_version = "2.2.0"
+    ext.sqlcipher_version = "4.4.0"
 
     repositories {
         google()
