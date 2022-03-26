@@ -13,6 +13,7 @@ import com.roviery.core.utils.AppExecutors
 import com.roviery.core.utils.Credentials
 import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SupportFactory
+import okhttp3.CertificatePinner
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -24,12 +25,13 @@ import java.util.concurrent.TimeUnit
 val databaseModule = module {
     factory { get<MovlixDatabase>().movlixDao() }
     single {
-        val passphrase: ByteArray = SQLiteDatabase.getBytes("movlix".toCharArray())
+        val passphrase: ByteArray =
+            SQLiteDatabase.getBytes("roviery".toCharArray())
         val factory = SupportFactory(passphrase)
         Room.databaseBuilder(
             androidContext(),
             MovlixDatabase::class.java,
-            "Movlix.db"
+            "Movlix"
         ).fallbackToDestructiveMigration()
             .openHelperFactory(factory)
             .build()
@@ -38,10 +40,15 @@ val databaseModule = module {
 
 val networkModule = module {
     single {
+        val hostname = "developers.themoviedb.org"
+        val certificatePinner = CertificatePinner.Builder()
+            .add(hostname, "sha256/iG3RcySOPXk22XlLdaWhzd63hSWN6gdoJkuezAQ8pF4=")
+            .build()
         OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
+            .certificatePinner(certificatePinner)
             .build()
     }
     single {
