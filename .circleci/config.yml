@@ -11,6 +11,12 @@ jobs:
       - restore_cache:
           key: android-orb-v1-
       - run:
+          name: Touch local properties
+          command: touch local.properties
+      - run:
+          name: Add API KEY
+          command: echo "API_KEY=\"6371f15a88c746f9f829761c2dbffe7e\"" >> local.properties
+      - run:
           name: Chmod permissions
           command: sudo chmod +x ./gradlew
       - run:
