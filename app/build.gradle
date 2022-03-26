@@ -24,11 +24,11 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -52,5 +52,5 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
     implementation "dev.chrisbanes.insetter:insetter:$chrisbanes_version"
 
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.8.1'
 }

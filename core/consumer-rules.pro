@@ -78,6 +78,9 @@ public *;
 *** rewind();
 }
 
+-keep class androidx.core.* {*;}
+
+
 # Uncomment for DexGuard only
 #-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
 

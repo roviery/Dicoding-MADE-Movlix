@@ -9,10 +9,10 @@ buildscript{
     ext.espresso_version = "3.4.0"
     ext.glide_version = "4.1.0"
     ext.junit_version = "4.13.2"
-    ext.koin_version = "2.1.6"
+    ext.koin_version = "2.2.3"
     ext.kotlin_coroutines_version = '1.6.0'
     ext.lifecycle_version = "2.4.1"
-    ext.logging_interceptor_version = '5.0.0-alpha.5'
+    ext.logging_interceptor_version = '5.0.0-alpha.6'
     ext.material_version = "1.5.0"
     ext.multidex_version = "2.0.1"
     ext.navigation_version = "2.4.1"
@@ -20,7 +20,7 @@ buildscript{
     ext.retrofit_version = "2.9.0"
     ext.room_version = "2.4.2"
     ext.sqllite_version = "2.2.0"
-    ext.sqlcipher_version = "4.4.0"
+    ext.sqlcipher_version = '4.5.1'
 
     repositories {
         google()
