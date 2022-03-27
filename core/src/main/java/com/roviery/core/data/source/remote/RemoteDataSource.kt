@@ -1,7 +1,6 @@
 package com.roviery.core.data.source.remote
 
 import android.util.Log
-import com.roviery.core.BuildConfig
 import com.roviery.core.data.source.remote.network.ApiResponse
 import com.roviery.core.data.source.remote.network.ApiService
 import com.roviery.core.data.source.remote.response.MovieResponse
@@ -14,7 +13,7 @@ import kotlinx.coroutines.flow.flowOn
 
 class RemoteDataSource(private val apiService: ApiService) {
 
-    val API_KEY = "6371f15a88c746f9f829761c2dbffe7e"
+    private val API_KEY = "6371f15a88c746f9f829761c2dbffe7e"
     // Movie
 
     suspend fun getPopularMovie(): Flow<ApiResponse<List<MovieResponse>>> {

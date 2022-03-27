@@ -19,7 +19,7 @@ class LocalDataSource(private val movlixDao: MovlixDao) {
 
     suspend fun insertMovie(listMovie: List<MovieEntity>) = movlixDao.insertMovie(listMovie)
 
-    suspend fun insertSearchMovie(listSearchMovie: List<SearchMovieEntity>) = movlixDao.insertSearchMovie(listSearchMovie)
+    fun insertSearchMovie(listSearchMovie: List<SearchMovieEntity>) = movlixDao.insertSearchMovie(listSearchMovie)
 
     fun setFavoritePopularMovie(movie: MovieEntity, newState: Boolean){
         movie.isFavorite = newState
@@ -35,9 +35,9 @@ class LocalDataSource(private val movlixDao: MovlixDao) {
 
     fun searchTvShow(query: String): Flow<List<SearchTvShowEntity>> = movlixDao.searchTvShow(query)
 
-    suspend fun insertTvShow(listTvShow: List<TvShowEntity>) = movlixDao.insertTvShow(listTvShow)
+    fun insertTvShow(listTvShow: List<TvShowEntity>) = movlixDao.insertTvShow(listTvShow)
 
-    suspend fun  insertSearchTvShow(listSearchTvShow: List<SearchTvShowEntity>) = movlixDao.insertSearchTvShow(listSearchTvShow)
+    fun  insertSearchTvShow(listSearchTvShow: List<SearchTvShowEntity>) = movlixDao.insertSearchTvShow(listSearchTvShow)
 
     fun setFavoritePopularTvShow(tvShow: TvShowEntity, newState: Boolean){
         tvShow.isFavorite = newState
