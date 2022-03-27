@@ -22,10 +22,10 @@ interface MovlixDao {
     fun searchMovie(query: String?): Flow<List<SearchMovieEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertMovie(movie: List<MovieEntity>)
+    fun insertMovie(movie: List<MovieEntity>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertSearchMovie(searchMovie: List<SearchMovieEntity>)
+    fun insertSearchMovie(searchMovie: List<SearchMovieEntity>)
 
     @Update
     fun updateFavoritePopularMovie(movie: MovieEntity)
@@ -42,10 +42,10 @@ interface MovlixDao {
     fun searchTvShow(query: String?): Flow<List<SearchTvShowEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertTvShow(tvShow: List<TvShowEntity>)
+    fun insertTvShow(tvShow: List<TvShowEntity>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertSearchTvShow(searchTvShow: List<SearchTvShowEntity>)
+    fun insertSearchTvShow(searchTvShow: List<SearchTvShowEntity>)
 
     @Update
     fun updateFavoritePopularTvShow(tvShow: TvShowEntity)

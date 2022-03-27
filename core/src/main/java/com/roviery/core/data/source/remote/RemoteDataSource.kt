@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.flowOn
 
 class RemoteDataSource(private val apiService: ApiService) {
 
+    val API_KEY = "6371f15a88c746f9f829761c2dbffe7e"
     // Movie
 
     suspend fun getPopularMovie(): Flow<ApiResponse<List<MovieResponse>>> {
@@ -21,7 +22,7 @@ class RemoteDataSource(private val apiService: ApiService) {
         return flow {
             try {
                 val response =
-                    apiService.getPopularMovie(BuildConfig.API_KEY, Credentials.FIRST_PAGE)
+                    apiService.getPopularMovie(API_KEY, Credentials.FIRST_PAGE)
                 val dataArray = response.listMovie
                 if (dataArray.isNotEmpty()) {
                     emit(ApiResponse.Success(response.listMovie))
@@ -42,7 +43,7 @@ class RemoteDataSource(private val apiService: ApiService) {
             try {
                 Log.d("RemoteDataSource", query)
                 val response =
-                    apiService.searchMovie(BuildConfig.API_KEY, query, Credentials.FIRST_PAGE)
+                    apiService.searchMovie(API_KEY, query, Credentials.FIRST_PAGE)
                 val dataArray = response.listMovie
                 if (dataArray.isNotEmpty()) {
                     emit(ApiResponse.Success(response.listMovie))
@@ -64,7 +65,7 @@ class RemoteDataSource(private val apiService: ApiService) {
         return flow {
             try {
                 val response =
-                    apiService.getPopularTvShow(BuildConfig.API_KEY, Credentials.FIRST_PAGE)
+                    apiService.getPopularTvShow(API_KEY, Credentials.FIRST_PAGE)
                 val dataArray = response.listTvShow
                 if (dataArray.isNotEmpty()) {
                     emit(ApiResponse.Success(response.listTvShow))
@@ -85,7 +86,7 @@ class RemoteDataSource(private val apiService: ApiService) {
             try {
                 Log.d("RemoteDataSource", query)
                 val response =
-                    apiService.searchTvShow(BuildConfig.API_KEY, query, Credentials.FIRST_PAGE)
+                    apiService.searchTvShow(API_KEY, query, Credentials.FIRST_PAGE)
                 val dataArray = response.listTvShow
                 if (dataArray.isNotEmpty()) {
                     emit(ApiResponse.Success(response.listTvShow))
