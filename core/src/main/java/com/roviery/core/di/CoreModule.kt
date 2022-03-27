@@ -33,6 +33,7 @@ val databaseModule = module {
             MovlixDatabase::class.java,
             "Movlix"
         ).fallbackToDestructiveMigration()
+            .allowMainThreadQueries()
             .openHelperFactory(factory)
             .build()
     }
