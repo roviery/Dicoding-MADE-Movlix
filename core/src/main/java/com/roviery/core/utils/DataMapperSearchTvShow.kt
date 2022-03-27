@@ -38,4 +38,15 @@ object DataMapperSearchTvShow {
             )
         }
 
+    fun mapDomainToEntity(input: TvShow) =
+        SearchTvShowEntity(
+            tvShowId = input.tvShowId,
+            tvShowTitle = input.tvShowTitle,
+            tvShowPoster = input.tvShowPoster,
+            tvShowBackdrop = input.tvShowBackdrop,
+            tvShowReleaseDate = input.tvShowReleaseDate,
+            tvShowOverview = input.tvShowOverview,
+            tvShowVote = input.tvShowVote,
+            isFavorite = input.isFavorite
+        )
 }

@@ -12,6 +12,10 @@ interface ITvShowRepository {
 
     fun getFavoritePopularTvShow(): Flow<List<TvShow>>
 
+    fun getFavoriteSearchTvShow(): Flow<List<TvShow>>
+
     fun setFavoritePopularTvShow(tvShow: TvShow, state: Boolean)
+
+    fun setFavoriteSearchTvShow(tvShow: TvShow, state: Boolean)
 
 }

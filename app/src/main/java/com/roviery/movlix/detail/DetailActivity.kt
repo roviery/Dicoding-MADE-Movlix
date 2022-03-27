@@ -64,6 +64,7 @@ class DetailActivity : AppCompatActivity() {
             binding.detailFavBtn.setOnClickListener {
                 statusFavorite = !statusFavorite
                 detailViewModel.setFavoritePopularMovie(detailMovie, statusFavorite)
+                detailViewModel.setFavoriteSearchMovie(detailMovie, statusFavorite)
                 setStatusFavorite(statusFavorite)
             }
             binding.detailPb.visibility = View.GONE
@@ -92,6 +93,7 @@ class DetailActivity : AppCompatActivity() {
             binding.detailFavBtn.setOnClickListener {
                 statusFavorite = !statusFavorite
                 detailViewModel.setFavoritePopularTvShow(detailTvShow, statusFavorite)
+                detailViewModel.setFavoriteSearchTvShow(detailTvShow, statusFavorite)
                 setStatusFavorite(statusFavorite)
             }
             binding.detailPb.visibility = View.GONE

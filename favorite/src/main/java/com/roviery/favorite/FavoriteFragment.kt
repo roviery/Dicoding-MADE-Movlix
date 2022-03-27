@@ -20,7 +20,9 @@ class FavoriteFragment : Fragment() {
 
     private val favoriteViewModel: FavoriteViewModel by viewModel()
     private lateinit var movieAdapter: MovieAdapter
+    private lateinit var searchMovieAdapter: MovieAdapter
     private lateinit var tvShowAdapter: TvShowAdapter
+    private lateinit var searchTvShowAdapter: TvShowAdapter
 
     private var _binding: FragmentFavoriteBinding? = null
     private val binding get() = _binding
@@ -40,7 +42,9 @@ class FavoriteFragment : Fragment() {
 
         if (activity != null) {
             movieAdapter = MovieAdapter()
+            searchMovieAdapter = MovieAdapter()
             tvShowAdapter = TvShowAdapter()
+            searchTvShowAdapter = TvShowAdapter()
 
             movieAdapter.onItemClick = { selectedData ->
                 val intent = Intent(activity, DetailActivity::class.java)
@@ -48,7 +52,19 @@ class FavoriteFragment : Fragment() {
                 startActivity(intent)
             }
 
+            searchMovieAdapter.onItemClick = { selectedData ->
+                val intent = Intent(activity, DetailActivity::class.java)
+                intent.putExtra(DetailActivity.EXTRA_MOVIE, selectedData)
+                startActivity(intent)
+            }
+
             tvShowAdapter.onItemClick = { selectedData ->
+                val intent = Intent(activity, DetailActivity::class.java)
+                intent.putExtra(DetailActivity.EXTRA_TVSHOW, selectedData)
+                startActivity(intent)
+            }
+
+            searchTvShowAdapter.onItemClick = { selectedData ->
                 val intent = Intent(activity, DetailActivity::class.java)
                 intent.putExtra(DetailActivity.EXTRA_TVSHOW, selectedData)
                 startActivity(intent)
@@ -64,10 +80,20 @@ class FavoriteFragment : Fragment() {
             movieAdapter.setData(movie)
         }
 
+        favoriteViewModel.favoriteSearchMovie.observe(viewLifecycleOwner) { movie ->
+            searchMovieAdapter.setData(movie)
+        }
+
         with(binding?.favoriteRvFavoriteMovie) {
             this?.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
             this?.setHasFixedSize(true)
             this?.adapter = movieAdapter
+        }
+
+        with(binding?.favoriteRvFavoriteSearchMovie) {
+            this?.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+            this?.setHasFixedSize(true)
+            this?.adapter = searchMovieAdapter
         }
     }
 
@@ -76,10 +102,20 @@ class FavoriteFragment : Fragment() {
             tvShowAdapter.setData(tvShow)
         }
 
+        favoriteViewModel.favoriteSearchTvShow.observe(viewLifecycleOwner) { tvShow ->
+            searchTvShowAdapter.setData(tvShow)
+        }
+
         with(binding?.favoriteRvFavoriteTvshow) {
             this?.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
             this?.setHasFixedSize(true)
             this?.adapter = tvShowAdapter
+        }
+
+        with(binding?.favoriteRvFavoriteSearchTvShow) {
+            this?.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+            this?.setHasFixedSize(true)
+            this?.adapter = searchTvShowAdapter
         }
     }
 
@@ -87,6 +123,8 @@ class FavoriteFragment : Fragment() {
         super.onDestroyView()
         binding?.favoriteRvFavoriteMovie?.adapter = null
         binding?.favoriteRvFavoriteTvshow?.adapter = null
+        binding?.favoriteRvFavoriteSearchMovie?.adapter = null
+        binding?.favoriteRvFavoriteSearchTvShow?.adapter = null
         _binding = null
     }
 }

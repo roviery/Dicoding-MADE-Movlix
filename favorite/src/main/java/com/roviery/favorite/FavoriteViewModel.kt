@@ -7,5 +7,8 @@ import com.roviery.core.domain.usecase.TvShowUseCase
 
 class FavoriteViewModel(movieUseCase: MovieUseCase, tvShowUseCase: TvShowUseCase) : ViewModel() {
     val favoritePopularMovie = movieUseCase.getFavoritePopularMovie().asLiveData()
+    val favoriteSearchMovie = movieUseCase.getFavoriteSearchMovie().asLiveData()
     val favoritePopularTvShow = tvShowUseCase.getFavoritePopularTvShow().asLiveData()
+    val favoriteSearchTvShow = tvShowUseCase.getFavoriteSearchTvShow().asLiveData()
+
 }

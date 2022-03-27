@@ -47,6 +47,12 @@ class MovieRepository(
         }
     }
 
+    override fun getFavoriteSearchMovie(): Flow<List<Movie>> {
+        return localDataSource.getFavoriteSearchMovie().map {
+            DataMapperSearchMovie.mapEntitiesToDomain(it)
+        }
+    }
+
     override fun searchMovie(query: String): Flow<Resource<List<Movie>>> =
         object :
             NetworkBoundResource<List<Movie>, List<MovieResponse>>() {
@@ -56,7 +62,8 @@ class MovieRepository(
                 }
             }
 
-            override fun shouldFetch(data: List<Movie>?): Boolean = true
+            override fun shouldFetch(data: List<Movie>?): Boolean =
+                data == null || data.isEmpty()
 
             override suspend fun createCall(): Flow<ApiResponse<List<MovieResponse>>> =
                 remoteDataSource.searchMovie(query)
@@ -71,6 +78,12 @@ class MovieRepository(
         val movieEntity = DataMapperMovie.mapDomainToEntity(movie)
         appExecutors.diskIO()
             .execute { localDataSource.setFavoritePopularMovie(movieEntity, state) }
+    }
+
+    override fun setFavoriteSearchMovie(movie: Movie, state: Boolean) {
+        val searchMovieEntity = DataMapperSearchMovie.mapDomainToEntity(movie)
+        appExecutors.diskIO()
+            .execute { localDataSource.setFavoriteSearchMovie(searchMovieEntity, state) }
     }
 
 }

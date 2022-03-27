@@ -18,6 +18,9 @@ interface MovlixDao {
     @Query("SELECT * FROM Movie WHERE isFavorite = 1")
     fun getFavoritePopularMovie(): Flow<List<MovieEntity>>
 
+    @Query("SELECT * FROM SearchMovie WHERE isFavorite = 1")
+    fun getFavoriteSearchMovie(): Flow<List<SearchMovieEntity>>
+
     @Query("SELECT * FROM SearchMovie WHERE movieTitle LIKE '%' || :query || '%'")
     fun searchMovie(query: String?): Flow<List<SearchMovieEntity>>
 
@@ -30,6 +33,9 @@ interface MovlixDao {
     @Update
     fun updateFavoritePopularMovie(movie: MovieEntity)
 
+    @Update
+    fun updateFavoriteSearchMovie(movie: SearchMovieEntity)
+
     // Tv Show
 
     @Query("SELECT * FROM TvShow")
@@ -37,6 +43,9 @@ interface MovlixDao {
 
     @Query("SELECT * FROM TvShow WHERE isFavorite = 1")
     fun getFavoritePopularTvShow(): Flow<List<TvShowEntity>>
+
+    @Query("SELECT * FROM SearchTvShow WHERE isFavorite = 1")
+    fun getFavoriteSearchTvShow(): Flow<List<SearchTvShowEntity>>
 
     @Query("SELECT * FROM SearchTvShow WHERE tvShowTitle LIKE '%' || :query || '%'")
     fun searchTvShow(query: String?): Flow<List<SearchTvShowEntity>>
@@ -49,5 +58,8 @@ interface MovlixDao {
 
     @Update
     fun updateFavoritePopularTvShow(tvShow: TvShowEntity)
+
+    @Update
+    fun updateFavoriteSearchTvShow(tvShow: SearchTvShowEntity)
 
 }

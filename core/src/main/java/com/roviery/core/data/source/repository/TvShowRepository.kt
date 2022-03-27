@@ -46,6 +46,12 @@ class TvShowRepository(
         }
     }
 
+    override fun getFavoriteSearchTvShow(): Flow<List<TvShow>> {
+        return localDataSource.getFavoriteSearchTvShow().map {
+            DataMapperSearchTvShow.mapEntitiesToDomain(it)
+        }
+    }
+
     override fun searchTvShow(query: String): Flow<Resource<List<TvShow>>> =
         object :
             NetworkBoundResource<List<TvShow>, List<TvShowResponse>>() {
@@ -70,5 +76,11 @@ class TvShowRepository(
         val tvShowEntity = DataMapperTvShow.mapDomainToEntity(tvShow)
         appExecutors.diskIO()
             .execute { localDataSource.setFavoritePopularTvShow(tvShowEntity, state) }
+    }
+
+    override fun setFavoriteSearchTvShow(tvShow: TvShow, state: Boolean) {
+        val searchTvShowEntity = DataMapperSearchTvShow.mapDomainToEntity(tvShow)
+        appExecutors.diskIO()
+            .execute { localDataSource.setFavoriteSearchTvShow(searchTvShowEntity, state) }
     }
 }

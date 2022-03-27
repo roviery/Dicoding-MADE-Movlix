@@ -14,6 +14,12 @@ class DetailViewModel(
     fun setFavoritePopularMovie(movie: Movie, newStatus: Boolean) =
         movieUseCase.setFavoritePopularMovie(movie, newStatus)
 
+    fun setFavoriteSearchMovie(movie: Movie, newStatus: Boolean) =
+        movieUseCase.setFavoriteSearchMovie(movie, newStatus)
+
     fun setFavoritePopularTvShow(tvShow: TvShow, newStatus: Boolean) =
         tvShowUseCase.setFavoritePopularTvShow(tvShow, newStatus)
+
+    fun setFavoriteSearchTvShow(tvShow: TvShow, newStatus: Boolean) =
+        tvShowUseCase.setFavoriteSearchTvShow(tvShow, newStatus)
 }

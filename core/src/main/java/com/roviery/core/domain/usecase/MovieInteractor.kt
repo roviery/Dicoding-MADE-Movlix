@@ -11,7 +11,12 @@ class MovieInteractor(private val movieRepository: IMovieRepository) : MovieUseC
 
     override fun getFavoritePopularMovie() = movieRepository.getFavoritePopularMovie()
 
+    override fun getFavoriteSearchMovie() = movieRepository.getFavoriteSearchMovie()
+
     override fun setFavoritePopularMovie(movie: Movie, state: Boolean) =
         movieRepository.setFavoritePopularMovie(movie, state)
+
+    override fun setFavoriteSearchMovie(movie: Movie, state: Boolean) =
+        movieRepository.setFavoriteSearchMovie(movie, state)
 
 }

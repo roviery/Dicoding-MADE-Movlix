@@ -9,8 +9,10 @@
     <!--  Text View  -->
     <string name="popular_movie">Popular Movie</string>
     <string name="popular_tv_show">Popular Tv Show</string>
-    <string name="favorite_movie">Favorite Movie</string>
-    <string name="favorite_tv_show">Favorite Tv Show</string>
+    <string name="favorite_popular_movie">Favorite Popular Movie</string>
+    <string name="favorite_popular_tv_show">Favorite Popular Tv Show</string>
+    <string name="favorite_search_movie">Favorite Search Movie</string>
+    <string name="favorite_search_tv_show">Favorite Search Tv Show</string>
     <string name="error">ERROR</string>
     <string name="title">Title</string>
     <string name="overview">A young girl\'s love for a tiny puppy named Clifford makes the dog grow to an enormous size.</string>

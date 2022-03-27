@@ -38,5 +38,16 @@ object DataMapperSearchMovie {
             )
         }
 
+    fun mapDomainToEntity(input: Movie) =
+        SearchMovieEntity(
+            movieId = input.movieId,
+            movieTitle = input.movieTitle,
+            moviePoster = input.moviePoster,
+            movieBackdrop = input.movieBackdrop,
+            movieReleaseDate = input.movieReleaseDate,
+            movieOverview = input.movieOverview,
+            movieVote = input.movieVote,
+            isFavorite = input.isFavorite
+        )
 
 }

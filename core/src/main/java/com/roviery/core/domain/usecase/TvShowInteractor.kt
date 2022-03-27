@@ -11,7 +11,12 @@ class TvShowInteractor(private val tvShowRepository: ITvShowRepository) : TvShow
 
     override fun getFavoritePopularTvShow() = tvShowRepository.getFavoritePopularTvShow()
 
+    override fun getFavoriteSearchTvShow() = tvShowRepository.getFavoriteSearchTvShow()
+
     override fun setFavoritePopularTvShow(tvShow: TvShow, state: Boolean) =
         tvShowRepository.setFavoritePopularTvShow(tvShow, state)
+
+    override fun setFavoriteSearchTvShow(tvShow: TvShow, state: Boolean) =
+        tvShowRepository.setFavoriteSearchTvShow(tvShow, state)
 
 }
