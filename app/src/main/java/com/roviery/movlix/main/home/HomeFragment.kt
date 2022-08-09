@@ -2,12 +2,14 @@ package com.roviery.movlix.main.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.roviery.core.data.source.Resource
 import com.roviery.core.ui.MovieAdapter
 import com.roviery.core.ui.TvShowAdapter
@@ -20,6 +22,8 @@ class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModel()
     private lateinit var movieAdapter: MovieAdapter
     private lateinit var tvShowAdapter: TvShowAdapter
+    private var movieShimmerFrameLayout: ShimmerFrameLayout? = null
+    private var tvShowShimmerFrameLayout: ShimmerFrameLayout? = null
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding
@@ -37,6 +41,9 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (activity != null) {
+            movieShimmerFrameLayout = binding?.homeShimmerRvMovie
+            tvShowShimmerFrameLayout = binding?.homeShimmerRvTvshow
+
             movieAdapter = MovieAdapter()
             tvShowAdapter = TvShowAdapter()
 
@@ -69,6 +76,7 @@ class HomeFragment : Fragment() {
                         binding?.homeTvError?.visibility = View.GONE
                         binding?.progressBar?.visibility = View.GONE
                         movieAdapter.setData(movie.data)
+                        movieShimmerFrameLayout?.stopShimmer()
                     }
                     is Resource.Error -> {
                         binding?.progressBar?.visibility = View.GONE
@@ -97,6 +105,7 @@ class HomeFragment : Fragment() {
                         binding?.homeTvError?.visibility = View.GONE
                         binding?.progressBar?.visibility = View.GONE
                         tvShowAdapter.setData(tvShow.data)
+                        tvShowShimmerFrameLayout?.stopShimmer()
                     }
                     is Resource.Error -> {
                         binding?.progressBar?.visibility = View.GONE

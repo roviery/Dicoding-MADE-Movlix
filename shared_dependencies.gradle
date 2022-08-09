@@ -8,11 +8,12 @@ dependencies{
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
     implementation "androidx.multidex:multidex:$multidex_version"
 
-    // card view, recycler view, glide dependencies
+    // card view, recycler view, glide dependencies, shimmer
     implementation "androidx.cardview:cardview:$cardview_version"
     implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
     implementation "com.google.android.material:material:$material_version"
     implementation "com.github.bumptech.glide:glide:$glide_version"
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
     // koin dependencies
     implementation "io.insert-koin:koin-core:$koin_version"
