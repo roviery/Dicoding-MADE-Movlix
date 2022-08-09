@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Coding/Dicoding/Android Development Path/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission2)/app/src/main/res/layout/activity_detail.xml" value="0.31302083333333336" />
+        <entry key="..\:/Coding/Dicoding/Android Development Path/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission2)/favorite/src/main/res/layout/fragment_favorite.xml" value="0.33" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/drawable/backdrop_dark.xml" value="0.2275" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/drawable/backdrop_light.xml" value="0.2275" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/drawable/ic_close.xml" value="0.2275" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/drawable/ic_favorite_border.xml" value="0.2275" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/drawable/ic_favorite_solid.xml" value="0.2275" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/drawable/ic_home.xml" value="0.2205" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/drawable/ic_loading.xml" value="0.2275" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/drawable/loading.xml" value="0.2275" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/drawable/main_botnav_color.xml" value="0.2205" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/layout/activity_detail.xml" value="0.33" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/layout/activity_main.xml" value="0.31302083333333336" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/layout/fragment_dashboard.xml" value="0.31302083333333336" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/layout/fragment_favorite.xml" value="0.31302083333333336" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/layout/fragment_notifications.xml" value="0.31302083333333336" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/layout/fragment_search.xml" value="0.31302083333333336" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/menu/bottom_nav_menu.xml" value="0.31302083333333336" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/app/src/main/res/menu/main_botnav_menu.xml" value="0.31302083333333336" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/core/src/main/res/layout/item_list.xml" value="0.33" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/core/src/main/res/layout/item_list_movie.xml" value="0.22" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/core/src/main/res/layout/search_list.xml" value="0.31302083333333336" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission1)/favorite/src/main/res/layout/fragment_favorite.xml" value="0.17708333333333334" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission2)/core/src/main/res/layout/item_list.xml" value="0.15572916666666667" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission2)/core/src/main/res/layout/search_list.xml" value="0.15572916666666667" />
+        <entry key="..\:/Coding/Dicoding/MenjadiAndroidDeveloperExpert/Submission/Movlix(Submission2)/favorite/src/main/res/layout/fragment_favorite.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
